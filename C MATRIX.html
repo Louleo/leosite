@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Canberra Matrix Caculator</title>
+<script src="calculator.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</head>
+<body>
+<a href="c-C MATRIX.html">中文版</a>
+<div class="container">
+  <br>
+  <br>
+  <center><h1>Canberra Matrix Caculator</h1></center>
+  <br>
+  <br>
+<h5>1. HOW LONG HAVE YOU CURRENTLY LIVED IN CANBERRA?:</h5>
+<select id="1" style="width: 70%" class="selectpicker">
+<option value="0">Less than 1 year.</option>
+<option value="5">1 to 2 years.</option>
+<option value="10">2 to 3 years.</option>
+<option value="15">3 to 4 years.</option>
+<option value="20">More than 4 years.</option>
+</select>
+<br>
+<br>
+<h5>2. ENGLISH PROFICIENCY</h5>
+<select id="2" style="width: 70%" class="selectpicker">
+<option value="0">IELTS 6.0</option>
+<option value="10">IELTS 7.0</option>
+<option value="15">IELTS 8.0</option>
+</select>
+<br>
+<br>
+<h5>3. PARTNER ENGLISH PROFICIENCY</h5>
+<select id="3" style="width: 70%" class="selectpicker">
+<option value="0">NOT applicable</option>
+<option value="0">IELTS 6.0</option>
+<option value="5">IELTS 7.0 AND ABOVE</option>
+</select>
+<br>
+<br>
+<h5>4. NOMINATED OCCUPATION</h5>
+<select id="4" style="width: 70%" class="selectpicker">
+<option value="20">OPEN</option>
+<option value="0">CLOSED</option>
+</select>
+<br>
+<br>
+<h5>5. LENGTH OF CURRENT ACT EMPLOYMENT </h5>
+<select id="5" style="width: 70%" class="selectpicker">
+<option value="0">NOT applicable</option>
+<option value="5">Employed for 6 to 12 MONTHS</option>
+<option value="10">Employed for 12 MONTHS PLUS</option>
+</select>
+<br>
+<br>
+<h5>6. ACT EMPLOYMENT TYPE</h5>
+<select id="6" style="width: 70%" class="selectpicker">
+<option value="15">WORKING IN OPEN NONMINATED OCCUPATION</option>
+<option value="10">WORKING IN OPEN BUT NOT NOMINATED OCCUPATION</option>
+<option value="5">WORKING IN ANZSCO SKILL LEVEL 1 TO 3 OCCUPATION</option>
+<option value="5">NOMINATED OCCUPATION MINIMUM ONE YEAR</option>
+<option value="0">NOT APPLICABLE</option>
+</select>
+<br>
+<br>
+<h5>7. PARTNER EMPLOYMENT </h5>
+<select id="7" style="width: 70%" class="selectpicker">
+<option value="15">WORKING IN OPEN OCCUPATION IN ACT</option>
+<option value="10">SKILL ASSESSMENT RELEVANT TO CURRENT OCCUPATION</option>
+<option value="5">TERTIARY QUALIFICATION RELEVANT TO CURRENT OCCUPATION</option>
+<option value="5">CURRENTLY WORKING IN ANY OCCUPATION</option>
+<option value="0">NOT APPLICABLE</option>
+</select>
+<br>
+<br>
+<h5>8. STUDY LEVEL AT TERTIARY INSTITUTION </h5>
+<select id="8" style="width: 70%" class="selectpicker">
+<option value="20">DOCTORAL DEGREE</option>
+<option value="15">MASTER DEGREE</option>
+<option value="10">BACHELOR DEGREE OR THREE YEAR TRADE CERTIFICATE</option>
+<option value="5">DIPLOMA QUALIFICATION TAKING AT LEAST TWO YEARS OF FULL TIME STUDY</option>
+<option value="0">NOT APPLICABLE</option>
+</select><br>
+<br>
+<h5>9. STUDY COMPLETED AT AN ACT TERTIARY INSTITUTION </h5>
+<select id="9" style="width: 70%" class="selectpicker">
+<option value="15">THREE YEARS OR MORE STUDY</option>
+<option value="10">TWO YEARS STUDY</option>
+<option value="5">ONE YEAR STUDY</option>
+<option value="0">NOT APPLICABLE</option>
+</select><br>
+<br>
+<h5>10. PROSPECTIVE APPLICANTS </h5>
+<select id="10" style="width: 70%" class="selectpicker">
+<option value="10">A CANBERRA RESIDENT BEFORE OR ON 29 JUNE 2018</option>
+<option value="0">NOT APPLICABLE</option>
+</select><br>
+<br>
+<h5>11. ASSETS IN CANBERRA </h5>
+<select id="11" style="width: 70%" class="selectpicker">
+<option value="5">ACT PROPERTY MINIMUM $250,000</option>
+<option value="5">TWO YEARS ACT BUSINESS ACTIVITY MAJORITY OWENERSHIP AND MINIMUM $100,000 TURNOVER</option>
+<option value="5">$200,000 INVESTMENT IN A START-UP ACT BUSINESS</option>
+<option value="0">NOT APPLICABLE</option>
+</select><br>
+<br>
+<h5>12. CLOSE FAMILY TIES </h5>
+<select id="12" style="width: 70%" class="selectpicker">
+<option value="20">AUSTRALIAN CITIZEN/PR PARTNER/CHILD</option>
+<option value="10">AUSTRALIAN CITIZEN/PR PARENT, GRANDPARENT, BROTHER, SISTER</option>
+<option value="5">TR PARTNER</option>
+<option value="0">NOT APPLICABLE</option>
+</select><br>
+<br>
+
+<button class="btn btn-primary center-block" type="button" name="button" style="width:30%;" onclick="cal_cmax('e')">SUBMIT</button>
+<br>
+<br>
+</div>
+</body>
+</html>
