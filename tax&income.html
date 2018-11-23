@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>How Much You Earn?</title>
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+<script src="tax_calculator.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</head>
+<body>
+<a href="c-tax&income.html"><button class="btn btn-outline-primary my-2 my-sm-0"><span class="button--inner">中文版</span></button></a>
+<div class="container">
+  <br>
+  <br>
+  <center><h1>How Much You Earn?</h1></center>
+  <br>
+  <br>
+<div class="container">
+  <h3>How Much You Earn After Tax?</h3>
+  <br>
+  <label style="width:40%;" for="inputPassword" class="col-sm-5 col-form-label">Input your income:</label><input type="text" style="width:30%;" id="a1" ></input>
+  <br>
+  <br>
+  <label  style="width:40%;" class="col-sm-5 col-form-label">Does your income include super?:</label><select id="a2" class="form-control" style="width:30%; display:inline;">
+    <option value="1">Yes</option>
+    <option value="0">No</option>
+  </select>
+  <br>
+  <br>
+  <label  style="width:40%;" class="col-sm-5 col-form-label">What is the frequency for your income (input above) payment?</label><select class="form-control" id="a3" style="width:30%; display:inline;">
+    <option value="0">Yearly</option>
+    <option value="1">Monthly</option>
+    <option value="2">Weekly</option>
+    <option value="3">Hourly</option>
+  </select>
+  <br>
+  <br>
+  <br>
+  <button type="button" name="button" class="btn btn-primary center-block" style="width:30%; margin-left:40%" onclick="tax_cal('e')">SUBMIT</button>
+  <br>
+  <br>
+
+</div>
+<div class="container" id="display01">
+
+</div>
+<br>
+<div class="container">
+  <h3>How Much You Need To Get Before Tax?</h3>
+  <br>
+  <label style="width:40%;" for="inputPassword" class="col-sm-5 col-form-label">Input your expected income:</label><input type="text" style="width:30%;" id="b1" ></input>
+  <br>
+  <br>
+  <label style="width:40%;" class="col-sm-5 col-form-label">What is the frequency for your expected income (input above) payment?</label><select class="form-control" id="b2" style="width:30%; display:inline;">
+    <option value="0">Yearly</option>
+    <option value="1">Monthly</option>
+    <option value="2">Weekly</option>
+    <option value="3">Hourly</option>
+  </select>
+  <br>
+  <br>
+  <br>
+  <button type="button" name="button" class="btn btn-primary center-block" style="width:30%; margin-left:40%;" onclick="salary_cal('e')">SUBMIT</button>
+  <br>
+  <br>
+</div>
+<div class="container" id="display02">
+
+</div>
+<br>
+</div>
+</body>
+</html>
