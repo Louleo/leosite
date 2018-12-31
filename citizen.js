@@ -79,11 +79,6 @@ function days_to_date(start_date,days){
 }
 
 
-
-
-
-
-
 function date_to_days(start_date, end_date){
   var start_date_d = parseInt(start_date.substring(0,2));
   var start_date_m = parseInt(start_date.substring(2,4));
@@ -113,8 +108,9 @@ function date_to_days(start_date, end_date){
           y = i;
           year = start_date_y;
         }
+        days += days_of_month(y,year);
     }
-    days += days_of_month(y,year);
+
     if (start_date_y < end_date_y) {
       for (var i = start_date_y; i < end_date_y; i++) {
         if (y366_or_not(i)) {
@@ -168,45 +164,49 @@ function cal(f_a,p_g,ts){
     date = new_p_g;
   }
 
-  for (var i = ts.length-1; i > 0; i--) {
-      for (var j = 0; j < i; j++) {
-        if (date1_bigger_date2(ts[j+1].substring(0,8),ts[j].substring(0,8))) {
-          var temp = ts[j];
-          ts[j] = ts[j+1];
-          ts[j+1] = temp;
+
+  if (ts.length != 0) {
+    for (var i = ts.length-1; i > 0; i--) {
+        for (var j = 0; j < i; j++) {
+          if (date1_bigger_date2(ts[j+1].substring(0,8),ts[j].substring(0,8))) {
+            var temp = ts[j];
+            ts[j] = ts[j+1];
+            ts[j+1] = temp;
+          }
         }
-      }
+    }
+
+    var four_total_days = 0;
+    for (var i = 0; i < ts.length; i++) {
+       four_total_days += date_to_days(ts[i].substring(0,8),ts[i].substring(9,));
+       if (four_total_days > 365) {
+         var i_y = parseInt(ts[i].substring(13,)) + 4;
+         four_start_date = ts[i].substring(9,13) + i_y.toString();
+         break;
+       }else {
+         four_start_date = ts[0].substring(0,8);
+       }
+    }
+    if (date1_bigger_date2(four_start_date,date)) {
+      date = four_start_date;
+    }
+    var nine_total_days = 0;
+    for (var i = 0; i < ts.length; i++) {
+       nine_total_days += date_to_days(ts[i].substring(0,8),ts[i].substring(9,));
+       alert(nine_total_days);
+       if (nine_total_days > 90) {
+         var i_y = parseInt(ts[i].substring(13,)) + 4;
+         nine_start_date = ts[i].substring(9,13) + i_y.toString();
+         break;
+       }else {
+         nine_start_date = ts[0].substring(0,8);
+       }
+    }
+    if (date1_bigger_date2(nine_start_date,date)) {
+      date = nine_start_date;
+    }
   }
 
-
-  var four_total_days = 0;
-  for (var i = 0; i < ts.length; i++) {
-     four_total_days += date_to_days(ts[i].substring(0,8),ts[i].substring(9,));
-     if (four_total_days > 365) {
-       var i_y = parseInt(ts[i],substring(13,)) + 4;
-       four_start_date = ts[i].substring(9,13) + i_y.toString();
-       break;
-     }else {
-       four_start_date = ts[0].substring(0,8);
-     }
-  }
-  if (date1_bigger_date2(four_start_date,date)) {
-    date = four_start_date;
-  }
-  var nine_total_days = 0;
-  for (var i = 0; i < ts.length; i++) {
-     nine_total_days += date_to_days(ts[i].substring(0,8),ts[i].substring(9,));
-     if (nine_total_days > 90) {
-       var i_y = parseInt(ts[i],substring(13,)) + 4;
-       nine_start_date = ts[i].substring(9,13) + i_y.toString();
-       break;
-     }else {
-       nine_start_date = ts[0].substring(0,8);
-     }
-  }
-  if (date1_bigger_date2(nine_start_date,date)) {
-    date = nine_start_date;
-  }
   return date;
 
 }
@@ -230,20 +230,24 @@ function main(f_a,p_g,ts,l){
 }
 
 function cal_citi(l){
-  var i = travel_times;
-  var id1 = i.toString() + "s";
-  var id2 = i.toString() + "e";
-  var start_date = document.getElementById(id1).value;
-  var end_date = document.getElementById(id2).value;
-  start_date = start_date.substring(0,2)+start_date.substring(3,5)+start_date.substring(6,10);
-  end_date = end_date.substring(0,2)+end_date.substring(3,5)+end_date.substring(6,10);
-  travels.push(start_date+"-"+end_date);
+
+  if (travel_times != 0) {
+    for (var i = 1; i <= travel_times; i++) {
+      var id1 = i.toString() + "s";
+      var id2 = i.toString() + "e";
+      var start_date = document.getElementById(id1).value;
+      var end_date = document.getElementById(id2).value;
+      start_date = start_date.substring(0,2)+start_date.substring(3,5)+start_date.substring(6,);
+      end_date = end_date.substring(0,2)+end_date.substring(3,5)+end_date.substring(6,);
+      travels.push(start_date+"-"+end_date);
+    }
+  }
 
   f_a = document.getElementById("1").value;
   p_g = document.getElementById("2").value;
 
-  f_a = f_a.substring(0,2)+f_a.substring(3,5)+f_a.substring(6,10);
-  p_g = p_g.substring(0,2)+p_g.substring(3,5)+p_g.substring(6,10);
+  f_a = f_a.substring(0,2)+f_a.substring(3,5)+f_a.substring(6,);
+  p_g = p_g.substring(0,2)+p_g.substring(3,5)+p_g.substring(6,);
 
   main(f_a,p_g,travels,l);
 
