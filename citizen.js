@@ -168,14 +168,13 @@ function cal(f_a,p_g,ts){
   if (ts.length != 0) {
     for (var i = ts.length-1; i > 0; i--) {
         for (var j = 0; j < i; j++) {
-          if (date1_bigger_date2(ts[j+1].substring(0,8),ts[j].substring(0,8))) {
+          if (date1_bigger_date2(ts[i].substring(0,8),ts[j].substring(0,8))) {
             var temp = ts[j];
-            ts[j] = ts[j+1];
-            ts[j+1] = temp;
+            ts[j] = ts[i];
+            ts[i] = temp;
           }
         }
     }
-
     var four_total_days = 0;
     for (var i = 0; i < ts.length; i++) {
        four_total_days += date_to_days(ts[i].substring(0,8),ts[i].substring(9,));
@@ -192,10 +191,11 @@ function cal(f_a,p_g,ts){
     }
     var nine_total_days = 0;
     for (var i = 0; i < ts.length; i++) {
-       nine_total_days += date_to_days(ts[i].substring(0,8),ts[i].substring(9,));
-       alert(nine_total_days);
+      if (date1_bigger_date2(ts[i].substring(9,),p_g)) {
+        nine_total_days += date_to_days(ts[i].substring(0,8),ts[i].substring(9,));
+      }
        if (nine_total_days > 90) {
-         var i_y = parseInt(ts[i].substring(13,)) + 4;
+         var i_y = parseInt(ts[i].substring(13,)) + 1;
          nine_start_date = ts[i].substring(9,13) + i_y.toString();
          break;
        }else {
@@ -232,7 +232,7 @@ function main(f_a,p_g,ts,l){
 function cal_citi(l){
 
   if (travel_times != 0) {
-    for (var i = 1; i <= travel_times; i++) {
+      var i = travel_times;
       var id1 = i.toString() + "s";
       var id2 = i.toString() + "e";
       var start_date = document.getElementById(id1).value;
@@ -240,7 +240,6 @@ function cal_citi(l){
       start_date = start_date.substring(0,2)+start_date.substring(3,5)+start_date.substring(6,);
       end_date = end_date.substring(0,2)+end_date.substring(3,5)+end_date.substring(6,);
       travels.push(start_date+"-"+end_date);
-    }
   }
 
   f_a = document.getElementById("1").value;
@@ -256,3 +255,19 @@ function cal_citi(l){
   document.getElementById("3").innerHTML = "";
 
 }
+
+/**
+11/11/2015
+
+20/06/2018
+
+26/12/2017
+14/02/2018
+
+01/05/2018
+15/05/2018
+
+20/06/2018
+03/09/2018
+
+**/
