@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Navigation</title>
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="main_div">
+</div>
+<script>
+    var innerHtml = "<table class='table'><tbody>";
+    for (let i = 1; i <= 101 ; i++) {
+        if (i == 1){
+            innerHtml += "<tr><td><a href='word-"+i+".html'>Word-"+i+"</a></td>";
+        } else if (i % 5 == 1){
+            innerHtml += "</tr><tr><td><a href='word-"+i+".html'>Word-"+i+"</a></td>";
+        }else {
+            innerHtml += "<td><a href='word-"+i+".html'>Word-"+i+"</a></td>";
+        }
+    }
+    innerHtml += "</tr></tbody></table>";
+    document.getElementById('main_div').innerHTML = innerHtml;
+</script>
+</body>
+</html>
