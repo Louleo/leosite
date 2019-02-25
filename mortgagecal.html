@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mortgage Calculator</title>
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="mortgagecal.js"></script>
+</head>
+<body>
+  <div class="container" style="width:70%;">
+    <br>
+    <label style="width:40%;" for="inputPassword" class="float-left col-sm-5 col-form-label">Loan amount：</label><input type="text" style="width:30%;" id="loan_amount" class="float-right"></input>
+    <br>
+    <br>
+    <label style="width:40%;" for="inputPassword" class="float-left col-sm-5 col-form-label">Fixed rate: </label><input type="text" style="width:30%;" id="fixed_interest_rate" class="float-right"></input>
+    <br>
+    <br>
+    <label for="inputPassword" class="float-left col-sm-5 col-form-label" style="width:40%;">Fixed loan period: </label><input type="text" id="fixed_loan_period" style="width:30%" class="float-right">
+    <br>
+    <br>
+    <label style="width:40%;" for="inputPassword" class="float-left col-sm-5 col-form-label">Variable rate: </label><input type="text" style="width:30%;" id="variable_interest_rate" class="float-right"></input>
+    <br>
+    <br>
+    <label for="inputPassword" class="float-left col-sm-5 col-form-label" style="width:40%;">Variable loan period: </label><input type="text" id="variable_loan_period" style="width:30%" class="float-right">
+    <br>
+    <br>
+    <label for="inputPassword" class="float-left col-sm-5 col-form-label" style="width:40%;">Repayment amount: </label><input type="text" id="repayment_amount" style="width:30%" class="float-right">
+    <br>
+    <br>
+    <label for="inputPassword" class="float-left col-sm-5 col-form-label" style="width:40%;">Repayment frequency: </label><select id="repayment_frequency" style="width:30%;" class="float-right">
+      <option value="52">Week</option>
+      <option value="12">Month</option>
+      <option value="1">Year</option>
+    </select>
+    <br>
+    <br>
+    <div class="container">
+      <button type="button" name="button" onclick="repaymentCal()" style="width:30%;" class="float-left">Calculate Repayment</button><button type="button" onclick="periodCal()" name="button" style='width:30%;' class="float-right">Calculate Repayment Period</button>
+    </div>
+  </div>
+</body>
+</html>
