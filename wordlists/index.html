@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Navigation</title>
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<div id="main_div">
+</div>
+<script>
+    function initial(){
+        var innerHtml = "<table class='table'><tbody>";
+        for (let i = 1; i <= 40 ; i++) {
+            if (i == 1){
+                innerHtml += "<tr><td><a data-js='word-"+i+".js' href='#' class='word-list'>Word-"+i+"</a></td>";
+            } else if (i % 5 == 1){
+                innerHtml += "</tr><tr><td><a data-js='word-"+i+".js' href='#' class='word-list'>Word-"+i+"</a></td>";
+            }else {
+                innerHtml += "<td><a data-js='word-"+i+".js' href='#' class='word-list'>Word-"+i+"</a></td>";
+            }
+        }
+        innerHtml += "</tr></tbody></table>";
+        document.getElementById('main_div').innerHTML = innerHtml;
+    }
+    initial();
+    $('.word-list').on('click',function () {
+        $.getScript($(this).data('js'),function () {
+            var innerHtml = "<table class='table'><tbody>";
+            for (let i = 1; i <= 250 ; i++) {
+                if (i == 1){
+                    innerHtml += "<tr><td>"+word_list[i]+"</td>";
+                } else if (i % 5 == 1){
+                    innerHtml += "</tr><tr><td>"+word_list[i]+"</td>";
+                }else {
+                    innerHtml += "<td>"+word_list[i]+"</td>";
+                }
+            }
+            innerHtml += "</tr></tbody></table>";
+            document.getElementById('main_div').innerHTML = innerHtml;
+        })
+    });
+</script>
+</body>
+</html>
