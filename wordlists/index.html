@@ -18,7 +18,7 @@
         for (let i = 1; i <= 40 ; i++) {
             if (i == 1){
                 innerHtml += "<tr><td><a data-js='word-"+i+".js' href='#' class='word-list'>Word-"+i+"</a></td>";
-            } else if (i % 5 == 1){
+            } else if (i % 3 == 1){
                 innerHtml += "</tr><tr><td><a data-js='word-"+i+".js' href='#' class='word-list'>Word-"+i+"</a></td>";
             }else {
                 innerHtml += "<td><a data-js='word-"+i+".js' href='#' class='word-list'>Word-"+i+"</a></td>";
@@ -34,7 +34,7 @@
             for (let i = 1; i <= 250 ; i++) {
                 if (i == 1){
                     innerHtml += "<tr><td>"+word_list[i]+"</td>";
-                } else if (i % 5 == 1){
+                } else if (i % 3 == 1){
                     innerHtml += "</tr><tr><td>"+word_list[i]+"</td>";
                 }else {
                     innerHtml += "<td>"+word_list[i]+"</td>";
