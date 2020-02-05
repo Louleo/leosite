@@ -1,0 +1,68 @@
+{
+  "code": 0,
+  "data": {
+    "play_center": [
+      {
+        "_id": 132003633443001321444,
+        "photo_size": {
+          "width": "",
+          "height": ""
+        },
+        "title": "This is another shit",
+        "url": "",
+        "opentype": 0,
+        "smut": 0,
+        "sort": 0,
+        "show": 2,
+        "weights": 1,
+        "belong": 1,
+        "navPos": "",
+        "infix": "",
+        "butn": "",
+        "appid": "",
+        "campaignToken": "",
+        "providerToken": "",
+        "ads_company": "",
+        "ads_companyphoto": "",
+        "comm_nums": 0,
+        "adstype": "photo",
+        "photo": "",
+        "seconds": "0",
+        "type": "play_center"
+      }
+    ],
+    "play_preplay": {
+      "leftsec": 0,
+      "ads": [
+        {
+          "_id": 131947261983001123456,
+          "photo_size": {
+            "width": "",
+            "height": ""
+          },
+          "title": "This is shit",
+          "url": "",
+          "smut": 2,
+          "sort": 1,
+          "show": 2,
+          "weights": 6,
+          "belong": 1,
+          "navPos": "",
+          "infix": "",
+          "butn": "",
+          "appid": "",
+          "campaignToken": "",
+          "providerToken": "",
+          "ads_company": "",
+          "ads_companyphoto": "",
+          "comm_nums": 0,
+          "adstype": "video",
+          "photo": "",
+          "seconds": 11,
+          "opentype": 0,
+          "type": "play_preplay"
+        }
+      ]
+    }
+  }
+}
