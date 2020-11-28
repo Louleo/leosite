@@ -497,17 +497,17 @@ class IncomeCalculatorComponent {
         if (income <= 18200) {
             income = income - (0.02 * income);
         }
-        else if (income <= 37000) {
+        else if (income <= 45000) {
             income = income - 0.19 * (income - 18200) - (0.02 * income);
         }
-        else if (income <= 90000) {
-            income = income - 3572 - (0.325 * (income - 37000)) - (0.02 * income);
+        else if (income <= 120000) {
+            income = income - 5092 - (0.325 * (income - 45000)) - (0.02 * income);
         }
         else if (income <= 180000) {
-            income = income - 20979 - (0.37 * (income - 90000)) - (0.02 * income);
+            income = income - 29467 - (0.37 * (income - 120000)) - (0.02 * income);
         }
         else {
-            income = income - 54097 - (0.45 * (income - 180000)) - (0.02 * income);
+            income = income - 51667 - (0.45 * (income - 180000)) - (0.02 * income);
         }
         this.incomePerYear = income;
     }
@@ -519,17 +519,17 @@ class IncomeCalculatorComponent {
         if (income <= 17836) {
             income = income / 0.98;
         }
-        else if (income <= 32688) {
+        else if (income <= 39008) {
             income = (income - (0.19 * 18200)) / 0.79;
         }
-        else if (income <= 67403) {
-            income = (income + 3572 - (0.325 * 37000)) / 0.655;
+        else if (income <= 88133) {
+            income = (income + 5092 - (0.325 * 45000)) / 0.655;
         }
-        else if (income <= 122121) {
-            income = (income + 20979 - (0.37 * 90000)) / 0.61;
+        else if (income <= 124733) {
+            income = (income + 29467 - (0.37 * 120000)) / 0.61;
         }
         else {
-            income = (income + 54097 - (0.45 * 180000)) / 0.53;
+            income = (income + 51667 - (0.45 * 180000)) / 0.53;
         }
         this.incomePerYear = income;
     }
